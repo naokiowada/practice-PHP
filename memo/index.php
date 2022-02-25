@@ -4,7 +4,7 @@ require('dbconnect.php');
 $counts =$db->query('select count(*) as cnt from memos');
 $count = $counts->fetch_assoc();
 $max_page = floor(($count['cnt'])/5+1);
-echo $max_page;
+// echo $max_page;
 
 $stmt = $db->prepare('select * from memos order by id desc limit ?, 5');
 if (!$stmt) {
