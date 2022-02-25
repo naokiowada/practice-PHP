@@ -8,7 +8,7 @@ $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT);
 $page = ($page ?: 1);
 $start = ($page - 1) * 5;
 $stmt->bind_param('i', $start);
-// page=に不正な値が入力されたときの処理
+// page=に不正な値が入力されたときの処理※教材が間違っているため動作しません
 $result = $stmt->execute();
 
 ?>
@@ -35,10 +35,6 @@ $result = $stmt->execute();
     </div>
     <hr>
     <?php endwhile; ?>
-    <div>
-        <h2><a href="http://">メモです</a></h2>
-        <time>2022-02-25 10:01:01</time>
-    </div>
-    <hr>
+   
 </body>
 </html>
